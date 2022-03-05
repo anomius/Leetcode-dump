@@ -12,5 +12,4 @@ class Solution:
             stack.append(itr.val)
             count+=1
             itr=itr.next
-        print(stack)
         return stack==stack[::-1]
