@@ -2,13 +2,10 @@ class Solution:
     def distributeCandies(self, candies: int, num_people: int) -> List[int]:
         pep=[0]*num_people
         g=1
-        i=0
         while candies>g: 
-            pep[i%num_people]+=g
+            pep[g%num_people-1]+=g
             candies-=g
             g+=1
-            i+=1
-            
-        pep[i%num_people]+=candies
+        pep[g%num_people-1]+=candies
         return pep
             
