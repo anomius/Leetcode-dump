@@ -16,12 +16,10 @@ class Solution:
                 k.append(root.val) 
                 helper(root.right)
         helper(root)
-        print(k)
         l=k.copy()
         k.sort()
-        print(k)
         dic=[l[i]-k[i] for i in range(len(k))]
-        print(dic)
+       
         global count
         count=0
         def helper2(root):
@@ -29,7 +27,7 @@ class Solution:
                 global count
                 helper2(root.left)
                 root.val-=dic[count] 
-                print(root.val)
+                
                 count+=1
                 helper2(root.right)
         helper2(root)
