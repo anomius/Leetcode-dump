@@ -33,15 +33,15 @@ class Solution:
         #             #print("deb2 itr "+str(itr),"deb2 prv "+str(prv))
         #     #print(val)
         # return head
-        l1=dict()
+        l1=set()
         itr=head
         while itr:
-            if itr.data in l1.keys():
+            if itr.data in l1:
                 prev.next=itr.next
                 itr=itr.next
             else:
                 prev=itr
-                l1[itr.data]=0
+                l1.add(itr.data)
                 itr=itr.next
         return head
 
